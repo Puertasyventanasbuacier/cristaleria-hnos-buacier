@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -42,9 +43,20 @@ align-items:center;
 padding:12px 20px;
 }
 
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+color:white;
+font-size:22px;
+font-weight:bold;
+}
+
 .logo img{
-height:70px;
+height:90px;
+width:90px;
 border-radius:50%;
+object-fit:cover;
 }
 
 nav ul{
@@ -79,22 +91,22 @@ max-width:900px;
 }
 
 .hero h1{
-font-size:3rem;
+font-size:3.2rem;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.2rem;
+font-size:1.3rem;
 margin-bottom:30px;
 }
 
 .btn{
 display:inline-block;
 background:#25D366;
-padding:15px 30px;
+padding:15px 35px;
 color:white;
 text-decoration:none;
-border-radius:40px;
+border-radius:50px;
 font-weight:bold;
 }
 
@@ -106,7 +118,7 @@ padding:100px 8%;
 text-align:center;
 margin-bottom:50px;
 color:#062B56;
-font-size:2.2rem;
+font-size:2.4rem;
 }
 
 .about{
@@ -136,22 +148,38 @@ margin-bottom:10px;
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:25px;
 }
 
-.gallery img{
+.gallery-item{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.gallery-item img{
 width:100%;
-height:300px;
+height:280px;
 object-fit:cover;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,.15);
+border-radius:10px;
+}
+
+.gallery-item h3{
+margin-top:10px;
+text-align:center;
+color:#062B56;
 }
 
 .contact{
 background:#062B56;
 color:white;
 text-align:center;
+}
+
+.contact a{
+color:white;
 }
 
 footer{
@@ -184,6 +212,10 @@ nav{
 flex-direction:column;
 }
 
+.logo{
+flex-direction:column;
+}
+
 nav ul{
 flex-wrap:wrap;
 justify-content:center;
@@ -194,10 +226,13 @@ margin-top:10px;
 font-size:2rem;
 }
 
+.hero p{
+font-size:1rem;
+}
+
 }
 
 </style>
-
 </head>
 
 <body>
@@ -208,6 +243,7 @@ font-size:2rem;
 
 <div class="logo">
 <img src="logo.jpeg" alt="Cristalería Hnos. Buacier">
+<span>Cristalería Hnos. Buacier</span>
 </div>
 
 <ul>
@@ -248,10 +284,9 @@ Solicitar Cotización
 <div class="about">
 
 <p>
-Somos una empresa dedicada a la fabricación e instalación
-de gabinetes, puertas, ventanas, vitrinas y soluciones
-en aluminio y cristal para hogares, oficinas y negocios.
-Trabajamos con materiales de calidad y acabados profesionales.
+Somos una empresa especializada en gabinetes de cocina,
+puertas, ventanas, vitrinas, closets y trabajos en aluminio
+y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 </p>
 
 </div>
@@ -275,13 +310,13 @@ Trabajamos con materiales de calidad y acabados profesionales.
 </div>
 
 <div class="card">
-<h3>Vitrinas Comerciales</h3>
-<p>Exhibidores elegantes para negocios.</p>
+<h3>Closets</h3>
+<p>Fabricación e instalación profesional.</p>
 </div>
 
 <div class="card">
-<h3>Closets</h3>
-<p>Fabricación e instalación profesional.</p>
+<h3>Vitrinas Comerciales</h3>
+<p>Exhibidores para negocios y comercios.</p>
 </div>
 
 </div>
@@ -294,15 +329,30 @@ Trabajamos con materiales de calidad y acabados profesionales.
 
 <div class="gallery">
 
-<img src="cocina caoba.jpeg" alt="Cocina Caoba">
+<div class="gallery-item">
+<img src="cocina caoba.jpeg">
+<h3>Cocina en Caoba</h3>
+</div>
 
-<img src="cocina roble.jpeg" alt="Cocina Roble">
+<div class="gallery-item">
+<img src="cocina roble.jpeg">
+<h3>Cocina en Roble</h3>
+</div>
 
-<img src="gabineteblanco.jpeg" alt="Gabinete Blanco">
+<div class="gallery-item">
+<img src="gabineteblanco.jpeg">
+<h3>Gabinete Blanco</h3>
+</div>
 
-<img src="vitrina.jpg" alt="Vitrina">
+<div class="gallery-item">
+<img src="vitrina.jpg">
+<h3>Vitrina Comercial</h3>
+</div>
 
-<img src="contenedor antes.jpeg" alt="Proyecto Contenedor">
+<div class="gallery-item">
+<img src="contenedor antes.jpeg">
+<h3>Proyecto en Contenedor</h3>
+</div>
 
 </div>
 
@@ -313,12 +363,15 @@ Trabajamos con materiales de calidad y acabados profesionales.
 <h2>Contáctanos</h2>
 
 <p>📞 Oficina: 809-606-8170</p>
-
 <p>📱 WhatsApp: 829-696-2274</p>
-
 <p>📍 Ensanche Isabelita, Santo Domingo Este</p>
 
-<p>📸 Instagram: @cristaleria__hnos__buacier</p>
+<p>
+📸 Instagram:
+<a href="https://instagram.com/cristaleria__hnos__buacier" target="_blank">
+@cristaleria__hnos__buacier
+</a>
+</p>
 
 <br>
 
@@ -340,3 +393,4 @@ target="_blank">
 
 </body>
 </html>
+```
