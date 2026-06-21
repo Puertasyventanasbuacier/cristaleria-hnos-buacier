@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cristalería Hnos. Buacier | Gabinetes, Puertas y Ventanas</title>
 
-<meta name="description" content="Fabricación e instalación de gabinetes de cocina, closets, puertas, ventanas y vitrinas de aluminio y cristal en República Dominicana.">
-
-<meta name="keywords" content="gabinetes de cocina, aluminio y cristal, ventanas, puertas, closets, vitrinas, Santo Domingo Este">
-
-<meta name="author" content="Cristalería Hnos. Buacier">
+<meta name="description" content="Fabricación e instalación de gabinetes de cocina, puertas, ventanas, vitrinas, closets y trabajos en aluminio y cristal en Santo Domingo Este.">
 
 <style>
 
@@ -18,12 +15,11 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI,Arial,sans-serif;
-scroll-behavior:smooth;
+font-family:Arial,sans-serif;
 }
 
 body{
-background:#fff;
+background:#f8f8f8;
 color:#333;
 line-height:1.6;
 }
@@ -31,9 +27,9 @@ line-height:1.6;
 header{
 background:#062B56;
 position:fixed;
-width:100%;
 top:0;
-z-index:999;
+width:100%;
+z-index:1000;
 box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
 
@@ -43,13 +39,23 @@ margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+padding:12px 20px;
 }
 
 .logo{
-color:#fff;
-font-size:1.2rem;
+display:flex;
+align-items:center;
+gap:15px;
+color:white;
+font-size:22px;
 font-weight:bold;
+}
+
+.logo img{
+height:90px;
+width:90px;
+border-radius:50%;
+object-fit:cover;
 }
 
 nav ul{
@@ -58,17 +64,17 @@ list-style:none;
 gap:20px;
 }
 
-nav a{
-text-decoration:none;
+nav ul li a{
 color:white;
-font-weight:600;
+text-decoration:none;
+font-weight:bold;
 }
 
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url('cocina-roble.jpg');
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('cocina roble.jpeg');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -89,40 +95,36 @@ margin-bottom:20px;
 }
 
 .hero p{
-font-size:1.2rem;
+font-size:1.3rem;
 margin-bottom:30px;
 }
 
 .btn{
 display:inline-block;
 background:#25D366;
+padding:15px 35px;
 color:white;
-padding:15px 30px;
-border-radius:50px;
 text-decoration:none;
+border-radius:50px;
 font-weight:bold;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
 }
 
 section{
-padding:90px 8%;
+padding:100px 8%;
 }
 
 .section-title{
 text-align:center;
 margin-bottom:50px;
 color:#062B56;
-font-size:2.2rem;
+font-size:2.4rem;
 }
 
 .about{
-max-width:1100px;
+max-width:1000px;
 margin:auto;
 text-align:center;
+font-size:1.1rem;
 }
 
 .services{
@@ -132,47 +134,41 @@ gap:25px;
 }
 
 .card{
-padding:30px;
-border-radius:15px;
-box-shadow:0 0 15px rgba(0,0,0,.1);
-transition:.3s;
 background:white;
-}
-
-.card:hover{
-transform:translateY(-5px);
+padding:25px;
+border-radius:15px;
+box-shadow:0 0 12px rgba(0,0,0,.1);
 }
 
 .card h3{
-color:#0C7A3D;
-margin-bottom:15px;
+color:#062B56;
+margin-bottom:10px;
 }
 
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:300px;
-object-fit:cover;
-border-radius:12px;
-box-shadow:0 0 10px rgba(0,0,0,.15);
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:25px;
 }
 
-.feature{
-background:#f8f8f8;
-padding:25px;
+.gallery-item{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+.gallery-item img{
+width:100%;
+height:280px;
+object-fit:cover;
 border-radius:10px;
+}
+
+.gallery-item h3{
+margin-top:10px;
 text-align:center;
+color:#062B56;
 }
 
 .contact{
@@ -181,12 +177,8 @@ color:white;
 text-align:center;
 }
 
-.contact h2{
-margin-bottom:20px;
-}
-
-.contact p{
-margin:10px 0;
+.contact a{
+color:white;
 }
 
 footer{
@@ -198,8 +190,8 @@ padding:20px;
 
 .whatsapp{
 position:fixed;
-bottom:25px;
-right:25px;
+bottom:20px;
+right:20px;
 background:#25D366;
 width:70px;
 height:70px;
@@ -208,10 +200,9 @@ display:flex;
 justify-content:center;
 align-items:center;
 font-size:35px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 box-shadow:0 0 15px rgba(0,0,0,.3);
-z-index:9999;
 }
 
 @media(max-width:768px){
@@ -220,10 +211,14 @@ nav{
 flex-direction:column;
 }
 
+.logo{
+flex-direction:column;
+}
+
 nav ul{
-margin-top:10px;
 flex-wrap:wrap;
 justify-content:center;
+margin-top:10px;
 }
 
 .hero h1{
@@ -238,6 +233,7 @@ font-size:1rem;
 
 </style>
 </head>
+
 <body>
 
 <header>
@@ -245,7 +241,8 @@ font-size:1rem;
 <nav>
 
 <div class="logo">
-Cristalería Hnos. Buacier
+<img src="logo.jpeg" alt="Cristalería Hnos. Buacier">
+<span>Cristalería Hnos. Buacier</span>
 </div>
 
 <ul>
@@ -253,7 +250,6 @@ Cristalería Hnos. Buacier
 <li><a href="#nosotros">Nosotros</a></li>
 <li><a href="#servicios">Servicios</a></li>
 <li><a href="#galeria">Galería</a></li>
-<li><a href="#contenedores">Contenedores</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
 
@@ -265,12 +261,11 @@ Cristalería Hnos. Buacier
 
 <div class="hero-content">
 
-<h1>CRISTALERÍA DE ALTA CALIDAD Y SOLUCIONES A TU MEDIDA</h1>
+<h1>CRISTALERÍA HNOS. BUACIER</h1>
 
 <p>
-Fabricamos e instalamos gabinetes, closets, puertas,
-ventanas y estructuras de aluminio y cristal con acabados
-modernos y duraderos.
+Especialistas en gabinetes de cocina, puertas, ventanas,
+vitrinas y estructuras en aluminio y cristal.
 </p>
 
 <a href="https://wa.me/18296962274" class="btn">
@@ -288,16 +283,9 @@ Solicitar Cotización
 <div class="about">
 
 <p>
-
-En Cristalería Hnos. Buacier nos especializamos en la fabricación,
-diseño e instalación de soluciones arquitectónicas en aluminio y cristal.
-
-Desde Santo Domingo Este ofrecemos productos resistentes,
-modernos y personalizados para hogares, oficinas y comercios.
-
-Trabajamos con materiales de primera calidad para garantizar
-acabados impecables y larga duración.
-
+Somos una empresa especializada en gabinetes de cocina,
+puertas, ventanas, vitrinas, closets y trabajos en aluminio
+y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 </p>
 
 </div>
@@ -312,48 +300,22 @@ acabados impecables y larga duración.
 
 <div class="card">
 <h3>Gabinetes de Cocina</h3>
-<p>
-Diseños modernos en aluminio y cristal resistentes
-a humedad, calor y plagas.
-</p>
-</div>
-
-<div class="card">
-<h3>Closets Modernos</h3>
-<p>
-Aprovechamiento inteligente del espacio
-con acabados elegantes.
-</p>
+<p>Diseños modernos y personalizados.</p>
 </div>
 
 <div class="card">
 <h3>Puertas y Ventanas</h3>
-<p>
-Sistemas residenciales y comerciales
-de alta resistencia.
-</p>
+<p>Aluminio y cristal de alta calidad.</p>
 </div>
 
 <div class="card">
-<h3>Vitrinas Exhibidoras</h3>
-<p>
-Perfectas para negocios,
-tiendas y comercios.
-</p>
+<h3>Closets</h3>
+<p>Fabricación e instalación profesional.</p>
 </div>
 
 <div class="card">
-<h3>Divisiones de Oficina</h3>
-<p>
-Cristal y aluminio para espacios modernos.
-</p>
-</div>
-
-<div class="card">
-<h3>Instalación Profesional</h3>
-<p>
-Medición precisa y acabados garantizados.
-</p>
+<h3>Vitrinas Comerciales</h3>
+<p>Exhibidores para negocios y comercios.</p>
 </div>
 
 </div>
@@ -362,72 +324,33 @@ Medición precisa y acabados garantizados.
 
 <section id="galeria">
 
-<h2 class="section-title">Galería de Proyectos</h2>
+<h2 class="section-title">Nuestros Trabajos</h2>
 
 <div class="gallery">
 
-<img src="cocina-roble.jpg" alt="Gabinete moderno">
-
-<img src="cocina-blanca.jpg" alt="Cocina blanca">
-
-<img src="gabinete-blanco.jpg" alt="Gabinete aluminio">
-
-<img src="vitrina.jpg" alt="Vitrina de cristal">
-
+<div class="gallery-item">
+<img src="cocina caoba.jpeg">
+<h3>Cocina en Caoba</h3>
 </div>
 
-</section>
-
-<section id="contenedores">
-
-<h2 class="section-title">
-Transformación de Contenedores
-</h2>
-
-<p style="text-align:center;margin-bottom:40px;">
-
-Convertimos contenedores industriales en espacios funcionales,
-modernos y habitables mediante gabinetes, cocinetas,
-ventanas y acabados interiores de calidad.
-
-</p>
-
-<div class="gallery">
-
-<img src="contenedor-antes.jpg">
-
-<img src="contenedor-despues.jpg">
-
+<div class="gallery-item">
+<img src="cocina roble.jpeg">
+<h3>Cocina en Roble</h3>
 </div>
 
-</section>
-
-<section>
-
-<h2 class="section-title">
-¿Por Qué Elegirnos?
-</h2>
-
-<div class="features">
-
-<div class="feature">
-<h3>Medición Precisa</h3>
-<p>Tomamos medidas exactas para garantizar un ajuste perfecto.</p>
+<div class="gallery-item">
+<img src="gabineteblanco.jpeg">
+<h3>Gabinete Blanco</h3>
 </div>
 
-<div class="feature">
-<h3>Instalación Experta</h3>
-<p>Técnicos capacitados y herramientas profesionales.</p>
+<div class="gallery-item">
+<img src="vitrina.jpg">
+<h3>Vitrina Comercial</h3>
 </div>
 
-<div class="feature">
-<h3>Acabados Impecables</h3>
-<p>Detalles de alta calidad en cada proyecto.</p>
-</div>
-
-<div class="feature">
-<h3>Atención Personalizada</h3>
-<p>Asesoría desde el diseño hasta la instalación final.</p>
+<div class="gallery-item">
+<img src="contenedor antes.jpeg">
+<h3>Proyecto en Contenedor</h3>
 </div>
 
 </div>
@@ -439,12 +362,15 @@ ventanas y acabados interiores de calidad.
 <h2>Contáctanos</h2>
 
 <p>📞 Oficina: 809-606-8170</p>
-
 <p>📱 WhatsApp: 829-696-2274</p>
-
 <p>📍 Ensanche Isabelita, Santo Domingo Este</p>
 
-<p>📸 Instagram: @cristaleria__hnos__buacier</p>
+<p>
+📸 Instagram:
+<a href="https://instagram.com/cristaleria__hnos__buacier" target="_blank">
+@cristaleria__hnos__buacier
+</a>
+</p>
 
 <br>
 
@@ -455,18 +381,15 @@ Hablar por WhatsApp
 </section>
 
 <footer>
-
 © 2026 Cristalería Hnos. Buacier - Todos los derechos reservados
-
 </footer>
 
 <a class="whatsapp"
 href="https://wa.me/18296962274"
 target="_blank">
-
 💬
-
 </a>
 
 </body>
 </html>
+```
