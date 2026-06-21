@@ -145,6 +145,33 @@ color:#062B56;
 margin-bottom:10px;
 }
 
+/* Sección Materiales */
+.materials-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+max-width: 1100px;
+margin: auto;
+}
+
+.material-item {
+background: white;
+padding: 30px;
+border-left: 5px solid #062B56;
+border-radius: 4px;
+box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.material-item h3 {
+color: #062B56;
+margin-bottom: 15px;
+}
+
+.material-item ul {
+list-style-position: inside;
+margin-top: 10px;
+}
+
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -169,6 +196,26 @@ border-radius:10px;
 margin-top:10px;
 text-align:center;
 color:#062B56;
+}
+
+/* Sección FAQ */
+.faq-container {
+max-width: 800px;
+margin: auto;
+}
+
+.faq-item {
+background: white;
+margin-bottom: 15px;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0,0,0,.05);
+}
+
+.faq-item h3 {
+color: #062B56;
+margin-bottom: 10px;
+font-size: 1.2rem;
 }
 
 .contact{
@@ -249,7 +296,9 @@ font-size:1rem;
 <li><a href="#inicio">Inicio</a></li>
 <li><a href="#nosotros">Nosotros</a></li>
 <li><a href="#servicios">Servicios</a></li>
+<li><a href="#materiales">Materiales</a></li>
 <li><a href="#galeria">Galería</a></li>
+<li><a href="#faq">Preguntas</a></li>
 <li><a href="#contacto">Contacto</a></li>
 </ul>
 
@@ -322,6 +371,37 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 
 </section>
 
+<!-- NUEVA SECCIÓN: MATERIALES Y ACABADOS -->
+<section id="materiales" style="background: #f0f4f8;">
+
+<h2 class="section-title">Calidad en Materiales</h2>
+
+<div class="materials-grid">
+
+<div class="material-item">
+<h3>Perfiles de Aluminio P-92 y P-65</h3>
+<p>Utilizamos sistemas de perfiles de alta resistencia e ingeniería precisa para garantizar un deslizamiento suave y un aislamiento hermético en ventanas y puertas correderas.</p>
+</div>
+
+<div class="material-item">
+<h3>Acabados Duraderos</h3>
+<p>Nuestras estructuras en aluminio cuentan con tratamientos de superficie avanzados:</p>
+<ul>
+<li><strong>Anodizado:</strong> Máxima protección contra la corrosión ideal para el clima de nuestra isla.</li>
+<li><strong>Pintura Electrostática:</strong> Acabados impecables en blanco, negro y tonos madera texturizada (Roble, Caoba).</li>
+</ul>
+</div>
+
+<div class="material-item">
+<h3>Cristales de Seguridad</h3>
+<p>Trabajamos con una amplia variedad de cristales (templados, laminados, flotados y con acabados martillados o esmerilados) adaptados a la privacidad y seguridad que requiera tu hogar o local comercial.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SECCIÓN GALERÍA CORREGIDA Y OPTIMIZADA -->
 <section id="galeria">
 
 <h2 class="section-title">Nuestros Trabajos</h2>
@@ -329,7 +409,7 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 <div class="gallery">
 
 <div class="gallery-item">
-<img src="cocina caoba.jpeg">
+<img src="cocina caoba.jpg">
 <h3>Cocina en Caoba</h3>
 </div>
 
@@ -349,8 +429,44 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 </div>
 
 <div class="gallery-item">
-<img src="contenedor antes.jpeg">
-<h3>Proyecto en Contenedor</h3>
+<img src="contenedor despues.jpg">
+<h3>Proyecto en Contenedor (Terminado)</h3>
+</div>
+
+<div class="gallery-item">
+<img src="gabineteinstalado.jpg">
+<h3>Instalación de Gabinetes</h3>
+</div>
+
+</div>
+
+</section>
+
+<!-- NUEVA SECCIÓN: PREGUNTAS FRECUENTES -->
+<section id="faq" style="background: #eef2f7;">
+
+<h2 class="section-title">Preguntas Frecuentes</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+<h3>¿Trabajan con diseños a medida?</h3>
+<p>Sí, absolutamente todos nuestros gabinetes de cocina, closets, vitrinas y ventanas se fabrican desde cero adaptándonos exactamente a las pulgadas y dimensiones de tu espacio.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Qué ventajas tiene el aluminio sobre la madera en las cocinas?</h3>
+<p>El aluminio no absorbe humedad, es completamente inmune a las plagas (como el carcoma o las termitas), no se deforma con el calor de la cocina y es sumamente fácil de limpiar, ofreciendo una vida útil mucho más larga.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Cuál es el tiempo aproximado de entrega?</h3>
+<p>El tiempo varía según la complejidad del proyecto (un gabinete modular vs una remodelación comercial completa), pero generalmente nuestros tiempos de entrega e instalación oscilan entre 7 y 15 días laborables tras la confirmación del diseño.</p>
+</div>
+
+<div class="faq-item">
+<h3>¿Tienen cobertura de instalación fuera de Santo Domingo Este?</h3>
+<p>Nuestra sede principal está en el Ensanche Isabelita, pero brindamos servicios de fabricación e instalación en todo el Gran Santo Domingo y zonas aledañas bajo previa coordinación.</p>
 </div>
 
 </div>
@@ -392,4 +508,3 @@ target="_blank">
 
 </body>
 </html>
-```
