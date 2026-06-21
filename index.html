@@ -16,6 +16,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+scroll-behavior: smooth;
 }
 
 body{
@@ -68,6 +69,11 @@ nav ul li a{
 color:white;
 text-decoration:none;
 font-weight:bold;
+transition: color 0.3s;
+}
+
+nav ul li a:hover {
+color: #25D366;
 }
 
 .hero{
@@ -107,6 +113,13 @@ color:white;
 text-decoration:none;
 border-radius:50px;
 font-weight:bold;
+transition: transform 0.3s, background 0.3s;
+box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+}
+
+.btn:hover {
+transform: scale(1.05);
+background: #20ba5a;
 }
 
 section{
@@ -118,6 +131,17 @@ text-align:center;
 margin-bottom:50px;
 color:#062B56;
 font-size:2.4rem;
+position: relative;
+}
+
+.section-title::after {
+content: '';
+display: block;
+width: 60px;
+height: 4px;
+background: #25D366;
+margin: 15px auto 0 auto;
+border-radius: 2px;
 }
 
 .about{
@@ -127,22 +151,60 @@ text-align:center;
 font-size:1.1rem;
 }
 
+/* Sección Servicios - Tarjetas con Imágenes Superiores */
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
 .card{
 background:white;
-padding:25px;
 border-radius:15px;
-box-shadow:0 0 12px rgba(0,0,0,.1);
+box-shadow:0 4px 15px rgba(0,0,0,.05);
+transition: transform 0.3s, box-shadow 0.3s;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0,0,0,.1);
+}
+
+.card-img-container {
+width: 100%;
+height: 200px;
+overflow: hidden;
+background: #eee;
+}
+
+.card-img-container img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+transition: transform 0.5s;
+}
+
+.card:hover .card-img-container img {
+transform: scale(1.05);
+}
+
+.card-content {
+padding: 20px;
+text-align: left;
 }
 
 .card h3{
 color:#062B56;
 margin-bottom:10px;
+font-size:1.3rem;
+}
+
+.card p {
+font-size: 0.95rem;
+color: #555;
 }
 
 /* Sección Materiales */
@@ -159,7 +221,7 @@ background: white;
 padding: 30px;
 border-left: 5px solid #062B56;
 border-radius: 4px;
-box-shadow: 0 2px 8px rgba(0,0,0,.05);
+box-shadow: 0 4px 15px rgba(0,0,0,.05);
 }
 
 .material-item h3 {
@@ -172,6 +234,7 @@ list-style-position: inside;
 margin-top: 10px;
 }
 
+/* Galería con Efecto Zoom */
 .gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
@@ -182,40 +245,83 @@ gap:25px;
 background:white;
 padding:15px;
 border-radius:15px;
-box-shadow:0 0 10px rgba(0,0,0,.1);
+box-shadow:0 4px 15px rgba(0,0,0,.05);
+overflow: hidden;
+}
+
+.gallery-container-img {
+width: 100%;
+height: 340px;
+overflow: hidden;
+border-radius: 10px;
+background: #f0f0f0;
 }
 
 .gallery-item img{
 width:100%;
-height:280px;
+height:100%;
 object-fit:cover;
-border-radius:10px;
+transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+transform: scale(1.08);
 }
 
 .gallery-item h3{
-margin-top:10px;
+margin-top:15px;
 text-align:center;
 color:#062B56;
+font-size: 1.1rem;
 }
 
-/* Sección FAQ */
+/* Acordeón para FAQ interactivo */
 .faq-container {
 max-width: 800px;
 margin: auto;
 }
 
-.faq-item {
+details {
 background: white;
 margin-bottom: 15px;
 padding: 20px;
 border-radius: 10px;
-box-shadow: 0 2px 5px rgba(0,0,0,.05);
+box-shadow: 0 4px 15px rgba(0,0,0,.03);
+cursor: pointer;
+transition: background 0.3s;
 }
 
-.faq-item h3 {
-color: #062B56;
-margin-bottom: 10px;
+details[open] {
+background: #ffffff;
+border-left: 4px solid #25D366;
+}
+
+summary {
 font-size: 1.2rem;
+font-weight: bold;
+color: #062B56;
+outline: none;
+list-style: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+summary::after {
+content: '➔';
+font-size: 0.9rem;
+transition: transform 0.3s;
+color: #25D366;
+}
+
+details[open] summary::after {
+transform: rotate(90deg);
+}
+
+details p {
+margin-top: 15px;
+color: #555;
+cursor: default;
 }
 
 .contact{
@@ -235,6 +341,7 @@ text-align:center;
 padding:20px;
 }
 
+/* Botón de WhatsApp flotante con pulso animado */
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -250,6 +357,23 @@ font-size:35px;
 color:white;
 text-decoration:none;
 box-shadow:0 0 15px rgba(0,0,0,.3);
+z-index: 2000;
+animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+0% {
+transform: scale(0.95);
+box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+}
+70% {
+transform: scale(1);
+box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+}
+100% {
+transform: scale(0.95);
+box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+}
 }
 
 @media(max-width:768px){
@@ -265,15 +389,20 @@ flex-direction:column;
 nav ul{
 flex-wrap:wrap;
 justify-content:center;
-margin-top:10px;
+margin-top:15px;
+gap: 15px;
 }
 
 .hero h1{
-font-size:2rem;
+font-size:2.2rem;
 }
 
 .hero p{
-font-size:1rem;
+font-size:1.1rem;
+}
+
+section {
+padding: 60px 5%;
 }
 
 }
@@ -341,6 +470,7 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 
 </section>
 
+<!-- SECCIÓN SERVICIOS -->
 <section id="servicios">
 
 <h2 class="section-title">Nuestros Servicios</h2>
@@ -348,23 +478,43 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 <div class="services">
 
 <div class="card">
+<div class="card-img-container">
+<img src="cocina-roble.jpeg" alt="Gabinetes de Cocina">
+</div>
+<div class="card-content">
 <h3>Gabinetes de Cocina</h3>
-<p>Diseños modernos y personalizados.</p>
+<p>Diseños modernos y personalizados, resistentes a la humedad y plagas con estructuras base duraderas de aluminio.</p>
+</div>
 </div>
 
 <div class="card">
+<div class="card-img-container">
+<img src="photo_1_2026-06-21_01-04-12.jpg" alt="Puertas y Ventanas">
+</div>
+<div class="card-content">
 <h3>Puertas y Ventanas</h3>
-<p>Aluminio y cristal de alta calidad.</p>
+<p>Aluminio y cristal de alta resistencia. Diseños correderos y batientes con ingeniería acústica y hermética.</p>
+</div>
 </div>
 
 <div class="card">
-<h3>Closets</h3>
-<p>Fabricación e instalación profesional.</p>
+<div class="card-img-container">
+<img src="photo_2026-06-21_01-03-35.jpg" alt="Closets en Espejo">
+</div>
+<div class="card-content">
+<h3>Closets en Espejo</h3>
+<p>Fabricación e instalación profesional a la medida. Estructuras sólidas con hojas correderas de espejo que amplían tus espacios.</p>
+</div>
 </div>
 
 <div class="card">
+<div class="card-img-container">
+<img src="vitrina.jpg" alt="Vitrinas Comerciales">
+</div>
+<div class="card-content">
 <h3>Vitrinas Comerciales</h3>
-<p>Exhibidores para negocios y comercios.</p>
+<p>Exhibidores impecables para negocios y comercios con estantería reforzada que realza tus productos.</p>
+</div>
 </div>
 
 </div>
@@ -400,41 +550,83 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 
 </section>
 
-<!-- SECCIÓN GALERÍA CORREGIDA -->
+<!-- GALERÍA EXPANDIDA CON CATÁLOGO Y PROYECTOS -->
 <section id="galeria">
 
-<h2 class="section-title">Nuestros Trabajos</h2>
+<h2 class="section-title">Nuestros Trabajos y Catálogo</h2>
 
 <div class="gallery">
 
+<!-- Línea de Puertas de Catálogo Oficial -->
 <div class="gallery-item">
-<img src="cocina-caoba.jpeg">
-<h3>Cocina en Caoba</h3>
+<div class="gallery-container-img">
+<img src="IMG_2994.jpg" alt="Modelo 3L">
+</div>
+<h3>Puerta Modelo 3L</h3>
 </div>
 
 <div class="gallery-item">
-<img src="cocina-roble.jpeg">
+<div class="gallery-container-img">
+<img src="IMG_3003.jpg" alt="Modelo Premium">
+</div>
+<h3>Puerta Modelo Premium</h3>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-container-img">
+<img src="IMG_3004.jpg" alt="Modelo 4L + Acero Inoxidable">
+</div>
+<h3>Modelo 4L + Acero Inoxidable</h3>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-container-img">
+<img src="IMG_3005.jpg" alt="Puerta Everdoor">
+</div>
+<h3>Puerta Everdoor</h3>
+</div>
+
+<!-- Línea de Proyectos e Instalaciones Reales de Clósets y Ventanas -->
+<div class="gallery-item">
+<div class="gallery-container-img">
+<img src="photo_2026-06-21_01-03-35.jpg" alt="Instalación de Closet en Espejo">
+</div>
+<h3>Closet en Espejo (Esquina)</h3>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-container-img">
+<img src="photo_1_2026-06-21_01-04-08.jpg" alt="Trabajo de Perfilería y Espejo">
+</div>
+<h3>Instalación de Vestidor</h3>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-container-img">
+<img src="photo_2_2026-06-21_01-04-08.jpg" alt="Puertas Correderas Espejo">
+</div>
+<h3>Acabado en Aluminio Blanco</h3>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-container-img">
+<img src="photo_2_2026-06-21_01-04-12.jpg" alt="Ventana Corredera">
+</div>
+<h3>Ventana de Aluminio Integrada</h3>
+</div>
+
+<div class="gallery-item">
+<div class="gallery-container-img">
+<img src="cocina-roble.jpeg" alt="Cocina en Roble">
+</div>
 <h3>Cocina en Roble</h3>
 </div>
 
 <div class="gallery-item">
-<img src="gabinete-blanco.jpeg">
-<h3>Gabinete Blanco</h3>
+<div class="gallery-container-img">
+<img src="vitrina.jpg" alt="Vitrina Comercial">
 </div>
-
-<div class="gallery-item">
-<img src="vitrina.jpg">
 <h3>Vitrina Comercial</h3>
-</div>
-
-<div class="gallery-item">
-<img src="contenedor despues.jpeg">
-<h3>Proyecto en Contenedor (Terminado)</h3>
-</div>
-
-<div class="gallery-item">
-<img src="Instalación de Gabinetes.jpg">
-<h3>Instalación de Gabinetes</h3>
 </div>
 
 </div>
@@ -447,25 +639,25 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 
 <div class="faq-container">
 
-<div class="faq-item">
-<h3>¿Trabajan con diseños a medida?</h3>
+<details>
+<summary>¿Trabajan con diseños a medida?</summary>
 <p>Sí, absolutamente todos nuestros gabinetes de cocina, closets, vitrinas y ventanas se fabrican desde cero adaptándonos exactamente a las pulgadas y dimensiones de tu espacio.</p>
-</div>
+</details>
 
-<div class="faq-item">
-<h3>¿Qué ventajas tiene el aluminio sobre la madera en las cocinas?</h3>
+<details>
+<summary>¿Qué ventajas tiene el aluminio sobre la madera en las cocinas?</summary>
 <p>El aluminio no absorbe humedad, es completamente inmune a las plagas (como el carcoma o las termitas), no se deforma con el calor de la cocina y es sumamente fácil de limpiar, ofreciendo una vida útil mucho más larga.</p>
-</div>
+</details>
 
-<div class="faq-item">
-<h3>¿Cuál es el tiempo aproximado de entrega?</h3>
+<details>
+<summary>¿Cuál es el tiempo aproximado de entrega?</summary>
 <p>El tiempo varía según la complejidad del proyecto (un gabinete modular vs una remodelación comercial completa), pero generalmente nuestros tiempos de entrega e instalación oscilan entre 7 y 15 días laborables tras la confirmación del diseño.</p>
-</div>
+</details>
 
-<div class="faq-item">
-<h3>¿Tienen cobertura de instalación fuera de Santo Domingo Este?</h3>
+<details>
+<summary>¿Tienen cobertura de instalación fuera de Santo Domingo Este?</summary>
 <p>Nuestra sede principal está en el Ensanche Isabelita, pero brindamos servicios de fabricación e instalación en todo el Gran Santo Domingo y zonas aledañas bajo previa coordinación.</p>
-</div>
+</details>
 
 </div>
 
