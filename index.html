@@ -9,6 +9,8 @@
 
 <meta name="description" content="Fabricación e instalación de gabinetes de cocina, puertas, ventanas, vitrinas, closets y trabajos en aluminio y cristal en Santo Domingo Este.">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
 
 *{
@@ -324,14 +326,74 @@ color: #555;
 cursor: default;
 }
 
+/* DISEÑO AVANZADO DE LA SECCIÓN CONTACTO */
 .contact{
 background:#062B56;
 color:white;
 text-align:center;
 }
 
-.contact a{
-color:white;
+.contacto-container {
+max-width: 600px;
+margin: 0 auto;
+}
+
+.contacto-grid {
+display: flex;
+flex-direction: column;
+gap: 15px;
+align-items: center;
+margin-bottom: 35px;
+}
+
+.contacto-item {
+display: flex;
+align-items: center;
+background: rgba(255, 255, 255, 0.08);
+padding: 15px 25px;
+border-radius: 12px;
+width: 100%;
+max-width: 450px;
+text-align: left;
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: transform 0.3s, background 0.3s;
+}
+
+.contacto-item:hover {
+transform: translateY(-3px);
+background: rgba(255, 255, 255, 0.13);
+}
+
+.contacto-item i {
+font-size: 22px;
+color: #25D366;
+margin-right: 20px;
+width: 30px;
+text-align: center;
+}
+
+.contacto-item div {
+display: flex;
+flex-direction: column;
+}
+
+.contacto-item span {
+font-size: 11px;
+color: #b0bec5;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 2px;
+}
+
+.contacto-item strong, .contacto-item a {
+font-size: 16px;
+color: #ffffff;
+text-decoration: none;
+}
+
+.contacto-item a:hover {
+color: #25D366;
+text-decoration: underline;
 }
 
 footer{
@@ -470,7 +532,6 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 
 </section>
 
-<!-- SECCIÓN SERVICIOS -->
 <section id="servicios">
 
 <h2 class="section-title">Nuestros Servicios</h2>
@@ -550,14 +611,12 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 
 </section>
 
-<!-- GALERÍA EXPANDIDA CON CATÁLOGO Y PROYECTOS -->
 <section id="galeria">
 
 <h2 class="section-title">Nuestros Trabajos y Catálogo</h2>
 
 <div class="gallery">
 
-<!-- Línea de Puertas de Catálogo Oficial -->
 <div class="gallery-item">
 <div class="gallery-container-img">
 <img src="Modelo 3L Color Caoba.jpg" alt="Modelo 3L">
@@ -586,7 +645,6 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 <h3>Puerta Everdoor</h3>
 </div>
 
-<!-- Línea de Proyectos e Instalaciones Reales de Clósets y Ventanas -->
 <div class="gallery-item">
 <div class="gallery-container-img">
 <img src="Closet en Espejo (Esquina).png" alt="Instalación de Closet en Espejo">
@@ -665,24 +723,47 @@ y cristal. Ofrecemos calidad, garantía y acabados profesionales.
 
 <section class="contact" id="contacto">
 
-<h2>Contáctanos</h2>
+<div class="contacto-container">
+    <h2 class="section-title" style="color: white; margin-bottom: 40px;">Contáctanos</h2>
+    
+    <div class="contacto-grid">
+        <div class="contacto-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+                <span>Oficina</span>
+                <strong>809-606-8170</strong>
+            </div>
+        </div>
 
-<p>📞 Oficina: 809-606-8170</p>
-<p>📱 WhatsApp: 829-696-2274</p>
-<p>📍 Ensanche Isabelita, Santo Domingo Este</p>
+        <div class="contacto-item">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+                <span>WhatsApp</span>
+                <strong>829-696-2274</strong>
+            </div>
+        </div>
 
-<p>
-📸 Instagram:
-<a href="https://instagram.com/cristaleria__hnos__buacier" target="_blank">
-@cristaleria__hnos__buacier
-</a>
-</p>
+        <div class="contacto-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+                <span>Ubicación</span>
+                <strong>Ensanche Isabelita, Santo Domingo Este</strong>
+            </div>
+        </div>
 
-<br>
+        <div class="contacto-item">
+            <i class="fab fa-instagram"></i>
+            <div>
+                <span>Instagram</span>
+                <strong><a href="https://instagram.com/cristaleria__hnos__buacier" target="_blank">@cristaleria__hnos__buacier</a></strong>
+            </div>
+        </div>
+    </div>
 
-<a href="https://wa.me/18296962274" class="btn">
-Hablar por WhatsApp
-</a>
+    <a href="https://wa.me/18296962274" class="btn">
+        Hablar por WhatsApp
+    </a>
+</div>
 
 </section>
 
